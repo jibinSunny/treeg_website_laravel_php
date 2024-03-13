@@ -1,0 +1,21 @@
+.ibox-title{
+	    padding: 15px 10px 8px 15px !important;
+}
+
+#gallery .card{
+	margin: 10px;
+}
+
+.lightBoxGallery img{
+	width: 100%;
+}
+@media (min-width: 576px)
+{
+	.permission-create {
+    	max-width: 900px !important;
+    	margin: 1.75rem auto;
+	}
+}
+.invalid-feedback{
+	display: block;
+}

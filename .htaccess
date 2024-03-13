@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+#    php_value upload_max_filesize 20M
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    
+    RewriteEngine On
+    
+    RewriteCond %{REQUEST_FILENAME} -d [OR]
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ ^$1 [N]
+
+    RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+    RewriteRule ^(.*)$ public/$1 
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ server.php
+
+</IfModule>
+
+#php_value memory_limit 64M
+#php_flag display_startup_errors on
+#php_flag display_errors on
+#php_flag html_errors on
+#php_flag  log_errors on
+#php_value error_log  /home/path/public_html/domain/PHP_errors.log
